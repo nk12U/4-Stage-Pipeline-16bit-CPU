@@ -11,6 +11,7 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 
 ## ISA
 
+- RISC
 - Load-Store Architecture
 - Instruction Width: 15bit  
 - Opcode: 4bit
