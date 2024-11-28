@@ -11,6 +11,7 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 
 ## ISA
 
+- Harvard Architecture
 - RISC
 - Load-Store Architecture
 - Instruction Width: 15bit  
