@@ -11,8 +11,8 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 
 ## ISA
 
-- Harvard Architecture
 - RISC
+- Harvard Architecture
 - Load-Store Architecture
 - Instruction Length: 15bit  
 - Opcode: 4bit
@@ -24,7 +24,7 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 
 ## Environment
 
-- FPGA: Altera Cyclone V DE0-CV
+- FPGA: Cyclone V DE0-CV
 - IDE: [Quartus Prime Lite 23.1.1](https://www.intel.com/content/www/us/en/software-kit/825278/intel-quartus-prime-lite-edition-design-software-version-23-1-1-for-windows.html)
 - Simulator: [ModelSim 20.1.1](https://www.intel.com/content/www/us/en/software-kit/660907/intel-quartus-prime-lite-edition-design-software-version-20-1-1-for-windows.html)
 - Text Editor: [VSCode](https://code.visualstudio.com/)
