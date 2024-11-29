@@ -14,7 +14,7 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 - Harvard Architecture
 - RISC
 - Load-Store Architecture
-- Instruction Width: 15bit  
+- Instruction Length: 15bit  
 - Opcode: 4bit
 <img src = "https://github.com/nk12U/4-Stage-Pipeline-16bit-CPU/blob/main/img/ISA.jpg"> 
 
