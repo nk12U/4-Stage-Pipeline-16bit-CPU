@@ -16,11 +16,11 @@ This project implements a 4-Stage Pipeline 16bit CPU designed to execute simple 
 - Load-Store Architecture
 - Instruction Length: 15bit  
 - Opcode: 4bit
-<img src = "https://github.com/nk12U/4-Stage-Pipeline-16bit-CPU/blob/main/img/ISA.jpg"> 
+<img src = "https://github.com/nk12U/4-Stage-Pipeline-16bit-CPU/blob/main/img/ISA_chapter10.jpg"> 
 
 ## Micro Architecture
 
-<img src = "https://github.com/nk12U/4-Stage-Pipeline-16bit-CPU/blob/main/img/chapter7.png"> 
+<img src = "https://github.com/nk12U/4-Stage-Pipeline-16bit-CPU/blob/main/img/chapter10.png"> 
 
 ## Environment
 
