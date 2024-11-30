@@ -1,20 +1,20 @@
---  n_reg_ex.vhd
+-- n_reg_ex.vhd
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 
--- “üo—Í‚ÌéŒ¾
+-- å…¥å‡ºåŠ›ã®å®£è¨€
 entity n_reg_ex is
 	port(
 		CLK_EX		: in	std_logic;
-		N_REG			: in	std_logic_vector(2 downto 0);
+		N_REG		: in	std_logic_vector(2 downto 0);
 		N_REG_DLY	: out	std_logic_vector(2 downto 0)
 	);
 end n_reg_ex;
 
--- ‰ñ˜H‚Ì‹Lq
+-- å›è·¯ã®è¨˜è¿°
 architecture RTL of n_reg_ex is
--- M†‚Ì N_REG ‚ğ1ƒNƒƒbƒN’x‰„‚³‚¹‚é
+-- ä¿¡å·ã® N_REG ã‚’1ã‚¯ãƒ­ãƒƒã‚¯é…å»¶ã•ã›ã‚‹
 begin
 	process(CLK_EX)
 	begin

@@ -9,7 +9,7 @@ entity cpu15_pipeline is
 		CLK			: in  std_logic;
 		RESET_N		: in  std_logic;
 		IO65_IN		: in  std_logic_vector (15 downto 0);
-		IO64_OUT		: out std_logic_vector (15 downto 0)
+		IO64_OUT	: out std_logic_vector (15 downto 0)
 	);
 end cpu15_pipeline;
 
@@ -20,8 +20,8 @@ architecture RTL of cpu15_pipeline is
 	component fetch_rom
 		port(
 			address		: in  std_logic_vector (7 downto 0);
-			clock			: in  std_logic;
-			q				: out std_logic_vector (14 downto 0)
+			clock		: in  std_logic;
+			q			: out std_logic_vector (14 downto 0)
 		);
 	end component;
 
@@ -29,7 +29,7 @@ architecture RTL of cpu15_pipeline is
 	component decode
 		port(
 			CLK_DC		: in  std_logic;
-			PROM_OUT	   : in  std_logic_vector (14 downto 0);
+			PROM_OUT	: in  std_logic_vector (14 downto 0);
 			OP_CODE		: out std_logic_vector (3 downto 0);
 			OP_DATA		: out std_logic_vector (7 downto 0)	
 		);
@@ -39,7 +39,7 @@ architecture RTL of cpu15_pipeline is
 	component n_reg_ex
 		port(
 			CLK_EX		: in	std_logic;
-			N_REG			: in  std_logic_vector (2 downto 0);
+			N_REG		: in  std_logic_vector (2 downto 0);
 			N_REG_DLY 	: out	std_logic_vector (2 downto 0)
 		);
 	end component;
@@ -48,15 +48,15 @@ architecture RTL of cpu15_pipeline is
 	component reg_dc
 		port(
 			CLK_DC		: in  std_logic;
-			N_REG_IN		: in  std_logic_vector (2 downto 0);
-			REG_0			: in  std_logic_vector (15 downto 0);
-			REG_1			: in  std_logic_vector (15 downto 0);
-			REG_2			: in  std_logic_vector (15 downto 0);
-			REG_3			: in  std_logic_vector (15 downto 0);
-			REG_4			: in  std_logic_vector (15 downto 0);
-			REG_5			: in  std_logic_vector (15 downto 0);
-			REG_6			: in  std_logic_vector (15 downto 0);
-			REG_7			: in  std_logic_vector (15 downto 0);
+			N_REG_IN	: in  std_logic_vector (2 downto 0);
+			REG_0		: in  std_logic_vector (15 downto 0);
+			REG_1		: in  std_logic_vector (15 downto 0);
+			REG_2		: in  std_logic_vector (15 downto 0);
+			REG_3		: in  std_logic_vector (15 downto 0);
+			REG_4		: in  std_logic_vector (15 downto 0);
+			REG_5		: in  std_logic_vector (15 downto 0);
+			REG_6		: in  std_logic_vector (15 downto 0);
+			REG_7		: in  std_logic_vector (15 downto 0);
 			N_REG_OUT	: out std_logic_vector (2 downto 0);	
 			REG_OUT		: out std_logic_vector (15 downto 0)
 		);
@@ -65,11 +65,11 @@ architecture RTL of cpu15_pipeline is
 -- exec2 コンポーネントの宣言
 	component exec2
 		port(
-			CLK_EX  		: in  std_logic;
-			RESET_N 		: in  std_logic;
+			CLK_EX  	: in  std_logic;
+			RESET_N 	: in  std_logic;
 			OP_CODE    	: in  std_logic_vector (3 downto 0);
-			REG_A			: in  std_logic_vector (15 downto 0);
-			REG_B			: in  std_logic_vector (15 downto 0);
+			REG_A		: in  std_logic_vector (15 downto 0);
+			REG_B		: in  std_logic_vector (15 downto 0);
 			OP_DATA		: in  std_logic_vector (7 downto 0);
 			RAM_OUT		: in  std_logic_vector (15 downto 0);
 			P_COUNT		: out std_logic_vector (7 downto 0);
@@ -85,7 +85,7 @@ architecture RTL of cpu15_pipeline is
 		port(
    			CLK_WB		: in  std_logic;
    			RESET_N		: in  std_logic;
-			N_REG			: in  std_logic_vector (2 downto 0);
+			N_REG		: in  std_logic_vector (2 downto 0);
 			REG_IN		: in  std_logic_vector (15 downto 0);
 			REG_WEN		: in  std_logic;
 			REG_0 		: out std_logic_vector (15 downto 0);
@@ -102,35 +102,35 @@ architecture RTL of cpu15_pipeline is
 	component ram_dc_wb2
 		port(
 			CLK			: in std_logic;
-			RAM_ADDR		: in std_logic_vector (7 downto 0);
+			RAM_ADDR	: in std_logic_vector (7 downto 0);
 			RAM_IN		: in std_logic_vector (15 downto 0);
 			IO65_IN		: in std_logic_vector (15 downto 0);
 			RAM_WEN		: in std_logic;
 			RAM_OUT		: out std_logic_vector (15 downto 0);
-			IO64_OUT		: out std_logic_vector (15 downto 0)
+			IO64_OUT	: out std_logic_vector (15 downto 0)
 		);
 	end component;
 
 -- 内部信号の定義
 	signal	P_COUNT			: std_logic_vector (7 downto 0);
-	signal	PROM_OUT			: std_logic_vector (14 downto 0);
+	signal	PROM_OUT		: std_logic_vector (14 downto 0);
 	signal	OP_CODE			: std_logic_vector (3 downto 0);
 	signal	OP_DATA			: std_logic_vector (7 downto 0);
 	signal	N_REG_A			: std_logic_vector (2 downto 0);
 	signal	N_REG_B			: std_logic_vector (2 downto 0);
 	signal	N_REG_A_DLY		: std_logic_vector (2 downto 0);
 	signal	REG_IN			: std_logic_vector (15 downto 0);
-	signal	REG_A				: std_logic_vector (15 downto 0);
-	signal	REG_B				: std_logic_vector (15 downto 0);
+	signal	REG_A			: std_logic_vector (15 downto 0);
+	signal	REG_B			: std_logic_vector (15 downto 0);
 	signal	REG_WEN			: std_logic;
-	signal	REG_0				: std_logic_vector (15 downto 0);
-	signal	REG_1				: std_logic_vector (15 downto 0);
-	signal	REG_2				: std_logic_vector (15 downto 0);
-	signal	REG_3				: std_logic_vector (15 downto 0);
-	signal	REG_4				: std_logic_vector (15 downto 0);
-	signal	REG_5				: std_logic_vector (15 downto 0);
-	signal	REG_6				: std_logic_vector (15 downto 0);
-	signal	REG_7				: std_logic_vector (15 downto 0);
+	signal	REG_0			: std_logic_vector (15 downto 0);
+	signal	REG_1			: std_logic_vector (15 downto 0);
+	signal	REG_2			: std_logic_vector (15 downto 0);
+	signal	REG_3			: std_logic_vector (15 downto 0);
+	signal	REG_4			: std_logic_vector (15 downto 0);
+	signal	REG_5			: std_logic_vector (15 downto 0);
+	signal	REG_6			: std_logic_vector (15 downto 0);
+	signal	REG_7			: std_logic_vector (15 downto 0);
 	signal	RAM_IN			: std_logic_vector (15 downto 0);
 	signal	RAM_OUT			: std_logic_vector (15 downto 0);
 	signal	RAM_WEN			: std_logic;

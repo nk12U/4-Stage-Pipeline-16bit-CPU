@@ -8,16 +8,16 @@ entity exec2 is
 	port(
 		CLK_EX  	: in  std_logic;
 		RESET_N 	: in  std_logic;
-		OP_CODE  : in  std_logic_vector(3 downto 0);
+		OP_CODE  	: in  std_logic_vector(3 downto 0);
 		REG_A		: in  std_logic_vector(15 downto 0);
 		REG_B		: in  std_logic_vector(15 downto 0);
-		OP_DATA	: in  std_logic_vector(7 downto 0);
-		RAM_OUT	: in  std_logic_vector(15 downto 0);
-		P_COUNT	: out std_logic_vector(7 downto 0);
-		REG_IN	: out std_logic_vector(15 downto 0);
-		RAM_IN	: out std_logic_vector(15 downto 0);
-		REG_WEN	: out std_logic;
-		RAM_WEN	: out std_logic
+		OP_DATA		: in  std_logic_vector(7 downto 0);
+		RAM_OUT		: in  std_logic_vector(15 downto 0);
+		P_COUNT		: out std_logic_vector(7 downto 0);
+		REG_IN		: out std_logic_vector(15 downto 0);
+		RAM_IN		: out std_logic_vector(15 downto 0);
+		REG_WEN		: out std_logic;
+		RAM_WEN		: out std_logic
 	);
 end exec2;
 
@@ -27,7 +27,7 @@ architecture RTL of exec2 is
 -- 内部信号の定義
 signal PC   	   		: std_logic_vector(7 downto 0) := "00000000";
 signal CMP_FLAG			: std_logic := '0';
-signal HAZRD_FLAG			: std_logic := '0';
+signal HAZRD_FLAG		: std_logic := '0';
 signal HAZRD_FLAG_DLY	: std_logic := '0';
 
 begin

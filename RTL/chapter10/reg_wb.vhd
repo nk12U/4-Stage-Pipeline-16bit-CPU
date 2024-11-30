@@ -6,11 +6,11 @@ use IEEE.std_logic_1164.all;
 entity reg_wb is
 	port
 	(
-		CLK_WB	: in	std_logic;
-		RESET_N	: in	std_logic;
+		CLK_WB		: in	std_logic;
+		RESET_N		: in	std_logic;
 		N_REG		: in	std_logic_vector (2 downto 0);
-		REG_IN	: in	std_logic_vector (15 downto 0);
-		REG_WEN	: in	std_logic;
+		REG_IN		: in	std_logic_vector (15 downto 0);
+		REG_WEN		: in	std_logic;
 		REG_0		: out	std_logic_vector (15 downto 0);
 		REG_1		: out	std_logic_vector (15 downto 0);
 		REG_2		: out	std_logic_vector (15 downto 0);

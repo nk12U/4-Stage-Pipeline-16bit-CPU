@@ -8,25 +8,27 @@ use IEEE.std_logic_arith.all;
 entity ram_dc_wb2 is
 	port (
 		CLK			: in std_logic;
-		RAM_ADDR		: in std_logic_vector (7 downto 0);
+		RAM_ADDR	: in std_logic_vector (7 downto 0);
 		RAM_IN		: in std_logic_vector (15 downto 0);
 		IO65_IN		: in std_logic_vector (15 downto 0);
 		RAM_WEN		: in std_logic;
 		RAM_OUT		: out std_logic_vector (15 downto 0);
-		IO64_OUT		: out std_logic_vector (15 downto 0)
+		IO64_OUT	: out std_logic_vector (15 downto 0)
 	);
 end ram_dc_wb2;
 
 -- 回路の記述
 architecture RTL of ram_dc_wb2 is
+
 -- 配列の定義
 subtype RAM_WORD is std_logic_vector(15 downto 0);
 type RAM_ARRAY_TYPE is array (0 to 63) of RAM_WORD;
 signal RAM_ARRAY : RAM_ARRAY_TYPE;
+
 -- 内部信号の定義
 signal RAM_ADDR_DLY		: std_logic_vector (7 downto 0);
-signal RAM_ADDR_DLY2		: std_logic_vector (7 downto 0);
-signal ADDR_INT  			: integer range 0 to 255;
+signal RAM_ADDR_DLY2	: std_logic_vector (7 downto 0);
+signal ADDR_INT  		: integer range 0 to 255;
 signal ADDR_INT_DLY  	: integer range 0 to 255;
 
 begin

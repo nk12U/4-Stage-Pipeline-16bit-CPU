@@ -7,15 +7,15 @@ entity reg_dc is
 	port
 	(
 		CLK_DC		: in	std_logic;
-		N_REG_IN		: in	std_logic_vector(2 downto 0);
-		REG_0			: in	std_logic_vector(15 downto 0);
-		REG_1			: in 	std_logic_vector(15 downto 0);
-		REG_2			: in 	std_logic_vector(15 downto 0);
-		REG_3			: in 	std_logic_vector(15 downto 0);
-		REG_4			: in 	std_logic_vector(15 downto 0);
-		REG_5			: in 	std_logic_vector(15 downto 0);
-		REG_6			: in 	std_logic_vector(15 downto 0);
-		REG_7			: in	std_logic_vector(15 downto 0);
+		N_REG_IN	: in	std_logic_vector(2 downto 0);
+		REG_0		: in	std_logic_vector(15 downto 0);
+		REG_1		: in 	std_logic_vector(15 downto 0);
+		REG_2		: in 	std_logic_vector(15 downto 0);
+		REG_3		: in 	std_logic_vector(15 downto 0);
+		REG_4		: in 	std_logic_vector(15 downto 0);
+		REG_5		: in 	std_logic_vector(15 downto 0);
+		REG_6		: in 	std_logic_vector(15 downto 0);
+		REG_7		: in	std_logic_vector(15 downto 0);
 		N_REG_OUT	: out	std_logic_vector(2 downto 0);
 		REG_OUT		: out	std_logic_vector(15 downto 0)
 	);
